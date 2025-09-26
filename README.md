@@ -8,6 +8,24 @@ Um guia multilíngue (PT/EN) para implementação do RSL (Really Simple Licensin
 
 A multilingual guide (PT/EN) for implementing RSL (Really Simple Licensing) - the open standard that allows content creators to protect their work from unauthorized AI usage.
 
+## 🌟 Explicação 
+
+Você sabia que seu conteúdo pode estar sendo usado para treinar IAs sem sua autorização ou compensação?
+
+Com o avanço das ferramentas de IA generativa, criadores de conteúdo, jornalistas e empresas enfrentam um desafio crescente: como proteger seus direitos autorais na era da inteligência artificial?
+
+Faz algum tempo conheci o RSL (Really Simple Licensing), um padrão aberto e descentralizado baseado no RSS (Really Simple Syndication) que permite aos publicadores definir termos de licenciamento e compensação legíveis por máquinas para crawlers e agentes de IA
+
+Fiz este guia sobre isso - [https://reichaves.github.io/guiarsl/](https://reichaves.github.io/guiarsl/)
+
+E hoje também a repórter Fernanda Brigatti falou sobre isso na Folha - [https://www1.folha.uol.com.br/tec/2025/09/novo-padrao-para-sites-cria-cobranca-e-camada-extra-de-protecao-a-conteudo-usado-por-ias.shtml](https://www1.folha.uol.com.br/tec/2025/09/novo-padrao-para-sites-cria-cobranca-e-camada-extra-de-protecao-a-conteudo-usado-por-ias.shtml)
+
+O RSL Collective é a organização sem fins lucrativos que mantém e governa o padrão Really Simple Licensing (RSL), reunindo publishers, plataformas e desenvolvedores para definir regras abertas de licenciamento de conteúdo para uso por IAs
+
+Ou seja, é uma tentativa inicial de pagamento. O volume e o tipo de crawling por IAs cresceram rapidamente, com queda de tráfego de referência para sites jornalísticos e aumento de bots de “training”. Players de infraestrutura reagiram: a Cloudflare passou a bloquear por padrão crawlers de IA, lançou “pay per crawl” e “AI crawl control” (inclui respostas HTTP 402 “payment required”). Esses movimentos mostram que só o robots.txt é insuficiente e que um “caminho de licenciamento” estava faltando
+
+Hoje, na prática no Brasil, se um veículo ou publisher aderir ao RSL o que se ganha é sobretudo sinalização técnica e política. Não há um fluxo garantido de receita, não há relatos de Big Techs já pagando via RSL. Mas pode ser um caminho inicial de criar um esforço coletivo mundial de pressão e parceria com o RSL Collective. No relato de lançamento, o TechCrunch afirma que RSL cria uma “organização coletiva de licenciamento … que pode negociar termos e coletar royalties” para publishers [https://techcrunch.com/2025/09/10/rss-co-creator-launches-new-protocol-for-ai-data-licensing/](https://techcrunch.com/2025/09/10/rss-co-creator-launches-new-protocol-for-ai-data-licensing/)
+
 ## 🌟 Demonstração / Demo
 
 🔗 **[Veja o Guia ao Vivo / View Live Guide](https://reichaves.github.io/guiarsl/)**
