@@ -10,7 +10,7 @@ A multilingual guide (PT/EN) for implementing RSL (Really Simple Licensing) - th
 
 ## 🌟 Demonstração / Demo
 
-🔗 **[Veja o Guia ao Vivo / View Live Guide](https://reichaves.github.io/guia-rsl/)**
+🔗 **[Veja o Guia ao Vivo / View Live Guide](https://reichaves.github.io/guiarsl/)**
 
 ## 📋 Índice / Table of Contents
 
