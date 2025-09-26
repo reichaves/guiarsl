@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia RSL / RSL Guide</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --dark: #1f2937;
+            --light: #f9fafb;
+            --border: #e5e7eb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .language-switcher {
+            display: flex;
+            background: var(--light);
+            border-radius: 25px;
+            overflow: hidden;
+            border: 2px solid var(--border);
+        }
+
+        .lang-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .lang-btn:hover:not(.active) {
+            background: rgba(37, 99, 235, 0.1);
+        }
+
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .content {
+            background: white;
+            border-radius: 20px 20px 0 0;
+            padding: 3rem 0;
+            margin-top: 2rem;
+        }
+
+        .section {
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            color: var(--dark);
+        }
+
+        .warning-box {
+            background: #fef3c7;
+            border-left: 4px solid var(--warning);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .info-box {
+            background: #dbeafe;
+            border-left: 4px solid var(--primary);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .success-box {
+            background: #d1fae5;
+            border-left: 4px solid var(--secondary);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .code-block {
+            background: #1f2937;
+            color: #f9fafb;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+            position: relative;
+        }
+
+        .code-block pre {
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.875rem;
+        }
+
+        .copy-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        .steps {
+            counter-reset: step;
+            margin: 2rem 0;
+        }
+
+        .step {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 2rem;
+            counter-increment: step;
+        }
+
+        .step::before {
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2rem;
+            height: 2rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .license-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .license-card {
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .license-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .license-card h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .license-card.recommended {
+            border-color: var(--secondary);
+            background: #f0fdf4;
+        }
+
+        .license-card.recommended::before {
+            content: attr(data-recommended);
+            background: var(--secondary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq {
+            margin: 2rem 0;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background: var(--light);
+            padding: 1rem;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            background: #f3f4f6;
+        }
+
+        .faq-answer {
+            padding: 1rem;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .license-options {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--border);
+            flex-wrap: wrap;
+        }
+
+        .tab {
+            padding: 0.75rem 1.5rem;
+            background: none;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--dark);
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .tab:hover {
+            color: var(--primary);
+        }
+
+        .tab.active {
+            color: var(--primary);
+        }
+
+        .tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            margin-left: 0.5rem;
+        }
+
+        .badge.new {
+            background: var(--secondary);
+        }
+
+        .badge.beta {
+            background: var(--warning);
+        }
+
+        /* Hide elements based on language */
+        [data-lang]:not([data-lang*="pt"]) {
+            display: none;
+        }
+
+        body.lang-en [data-lang]:not([data-lang*="en"]) {
+            display: none;
+        }
+
+        body.lang-en [data-lang*="en"] {
+            display: initial;
+        }
+
+        body.lang-pt [data-lang*="pt"] {
+            display: initial;
+        }
+    </style>
+</head>
+<body class="lang-pt">
+    <header>
+        <nav class="container">
+            <div class="logo">🛡️ <span data-lang="pt">Guia RSL</span><span data-lang="en">RSL Guide</span></div>
+            <div class="nav-wrapper">
+                <ul class="nav-links">
+                    <li><a href="#inicio" data-lang="pt">Início</a><a href="#home" data-lang="en">Home</a></li>
+                    <li><a href="#instalacao" data-lang="pt">Instalação</a><a href="#installation" data-lang="en">Installation</a></li>
+                    <li><a href="#licencas" data-lang="pt">Licenças</a><a href="#licenses" data-lang="en">Licenses</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#recursos" data-lang="pt">Recursos</a><a href="#resources" data-lang="en">Resources</a></li>
+                </ul>
+                <div class="language-switcher">
+                    <button class="lang-btn active" onclick="setLanguage('pt')">🇧🇷 PT</button>
+                    <button class="lang-btn" onclick="setLanguage('en')">🇺🇸 EN</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1 data-lang="pt">Proteja seu Conteúdo contra IA</h1>
+            <h1 data-lang="en">Protect Your Content from AI</h1>
+            <p data-lang="pt">Implemente o RSL (Really Simple Licensing) e defina como as IAs podem usar seu conteúdo</p>
+            <p data-lang="en">Implement RSL (Really Simple Licensing) and define how AIs can use your content</p>
+            <div class="cta-buttons">
+                <a href="#instalacao" class="btn btn-primary" data-lang="pt">Começar Agora</a>
+                <a href="#installation" class="btn btn-primary" data-lang="en">Get Started</a>
+                <a href="https://rslstandard.org" target="_blank" class="btn btn-secondary">
+                    <span data-lang="pt">Documentação Oficial</span>
+                    <span data-lang="en">Official Documentation</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <main class="content">
+        <section id="inicio" class="section container" data-lang="pt">
+            <h2>O que é o RSL?</h2>
+            
+            <div class="info-box">
+                <strong>RSL (Really Simple Licensing)</strong> é um padrão aberto que permite aos criadores de conteúdo definir termos de licenciamento para crawlers de IA, incluindo opções de monetização, atribuição ou bloqueio total.
+            </div>
+
+            <h3>Por que você precisa do RSL?</h3>
+            <ul>
+                <li>🤖 IAs estão usando seu conteúdo sem autorização ou pagamento</li>
+                <li>💰 O robots.txt tradicional não permite monetização</li>
+                <li>⚖️ No Brasil, o PL 2338/2023 está criando novas regras sobre IA e direitos autorais</li>
+                <li>🔒 Grandes empresas já adotaram: Reddit, Yahoo!, Medium, Quora</li>
+            </ul>
+
+            <h3>Como funciona?</h3>
+            <p>O RSL permite definir diferentes modelos de licenciamento:</p>
+            
+            <div class="license-options">
+                <div class="license-card">
+                    <h4>🚫 Bloqueio Total</h4>
+                    <p>Proíbe completamente o uso para treinamento de IA</p>
+                </div>
+                <div class="license-card recommended" data-recommended="Recomendado">
+                    <h4>💵 Pay-per-crawl</h4>
+                    <p>Cobra por cada vez que a IA raspa seu conteúdo</p>
+                </div>
+                <div class="license-card">
+                    <h4>🎯 Pay-per-inference</h4>
+                    <p>Cobra quando a IA usa seu conteúdo em respostas</p>
+                </div>
+                <div class="license-card">
+                    <h4>📝 Atribuição</h4>
+                    <p>Permite uso gratuito com crédito obrigatório</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="home" class="section container" data-lang="en">
+            <h2>What is RSL?</h2>
+            
+            <div class="info-box">
+                <strong>RSL (Really Simple Licensing)</strong> is an open standard that allows content creators to define licensing terms for AI crawlers, including options for monetization, attribution, or complete blocking.
+            </div>
+
+            <h3>Why do you need RSL?</h3>
+            <ul>
+                <li>🤖 AIs are using your content without authorization or payment</li>
+                <li>💰 Traditional robots.txt doesn't allow monetization</li>
+                <li>⚖️ Legal frameworks worldwide are creating new rules about AI and copyright</li>
+                <li>🔒 Major companies already adopted: Reddit, Yahoo!, Medium, Quora</li>
+            </ul>
+
+            <h3>How does it work?</h3>
+            <p>RSL allows you to define different licensing models:</p>
+            
+            <div class="license-options">
+                <div class="license-card">
+                    <h4>🚫 Complete Block</h4>
+                    <p>Completely prohibits use for AI training</p>
+                </div>
+                <div class="license-card recommended" data-recommended="Recommended">
+                    <h4>💵 Pay-per-crawl</h4>
+                    <p>Charges for each time AI scrapes your content</p>
+                </div>
+                <div class="license-card">
+                    <h4>🎯 Pay-per-inference</h4>
+                    <p>Charges when AI uses your content in responses</p>
+                </div>
+                <div class="license-card">
+                    <h4>📝 Attribution</h4>
+                    <p>Allows free use with mandatory credit</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="instalacao" class="section container" data-lang="pt">
+            <h2>Instalação Rápida</h2>
+            
+            <div class="warning-box">
+                <strong>⚠️ Importante:</strong> Antes de começar, faça backup dos seus arquivos robots.txt e verifique se tem acesso FTP ou ao painel de controle do seu site.
+            </div>
+
+            <div class="steps">
+                <div class="step">
+                    <h3>Escolha seu modelo de licença</h3>
+                    <p>Selecione abaixo o tipo de proteção que deseja para seu conteúdo:</p>
+                    
+                    <div class="tabs">
+                        <button class="tab active" onclick="showTab('bloqueio-pt')">Bloqueio Total<span class="badge new">Recomendado</span></button>
+                        <button class="tab" onclick="showTab('monetizacao-pt')">Monetização</button>
+                        <button class="tab" onclick="showTab('atribuicao-pt')">Atribuição</button>
+                        <button class="tab" onclick="showTab('hibrido-pt')">Híbrido</button>
+                    </div>
+
+                    <div id="bloqueio-pt" class="tab-content active">
+                        <p>Bloqueia completamente o uso do seu conteúdo para treinamento de IA:</p>
+                        <div class="code-block">
+                            <button class="copy-btn" onclick="copyCode('code1pt')">Copiar</button>
+                            <pre id="code1pt">&lt;rsl xmlns="https://rslstandard.org/rsl"&gt;
+  &lt;content url="/"&gt;
+    &lt;license&gt;
+      &lt;prohibits type="usage"&gt;ai-train, ai-include&lt;/prohibits&gt;
+    &lt;/license&gt;
+  &lt;/content&gt;
+&lt;/rsl&gt;</pre>
+                        </div>
+                    </div>
+
+                    <div id="monetizacao-pt" class="tab-content">
+                        <p>Permite uso mediante pagamento através do RSL Collective:</p>
+                        <div class="code-block">
+                            <button class="copy-btn" onclick="copyCode('code2pt')">Copiar</button>
+                            <pre id="code2pt">&lt;rsl xmlns="https://rslstandard.org/rsl"&gt;
+  &lt;content url="/" server="https://rslcollective.org/api"&gt;
+    &lt;license&gt;
+      &lt;permits type="usage"&gt;ai-train&lt;/permits&gt;
+      &lt;payment type="royalty"&gt;
+        &lt;standard&gt;https://rslcollective.org/license&lt;/standard&gt;
+      &lt;/payment&gt;
+    &lt;/license&gt;
+  &lt;/content&gt;
+&lt;/rsl&gt;</pre>
+                        </div>
+                    </div>
+
+                    <div id="atribuicao-pt" class="tab-content">
+                        <p>Permite uso gratuito com atribuição obrigatória:</p>
+                        <div class="code-block">
+                            <button class="copy-btn" onclick="copyCode('code3pt')">Copiar</button>
+                            <pre id="code3pt">&lt;rsl xmlns="https://rslstandard.org/rsl"&gt;
+  &lt;content url="/"&gt;
+    &lt;license&gt;
+      &lt;permits type="usage"&gt;ai-train&lt;/permits&gt;
+      &lt;payment type="attribution"&gt;
+        &lt;standard&gt;https://creativecommons.org/licenses/by/4.0/&lt;/standard&gt;
+      &lt;/payment&gt;
+    &lt;/license&gt;
+  &lt;/content&gt;
+&lt;/rsl&gt;</pre>
+                        </div>
+                    </div>
+
+                    <div id="hibrido-pt" class="tab-content">
+                        <p>Permite busca mas bloqueia treinamento de IA:</p>
+                        <div class="code-block">
+                            <button class="copy-btn" onclick="copyCode('code4pt')">Copiar</button>
+                            <pre id="code4pt">&lt;rsl xmlns="https://rslstandard.org/rsl"&gt;
+  &lt;content url="/"&gt;
+    &lt;license&gt;
+      &lt;permits type="usage"&gt;search&lt;/permits&gt;
+      &lt;prohibits type="usage"&gt;ai-train, ai-include&lt;/prohibits&gt;
+      &lt;payment type="subscription"&gt;
+        &lt;custom&gt;https://seusite.com.br/licenciamento&lt;/custom&gt;
+      &lt;/payment&gt;
+    &lt;/license&gt;
+  &lt;/content&gt;
+&lt;/rsl&gt;</pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h3>Crie o arquivo license.xml</h3>
+                    <p>1. Copie o código escolhido acima</p>
+                    <p>2. Crie um novo arquivo chamado <code>license.xml</code></p>
+                    <p>3. Cole o código e salve o arquivo</p>
+                    <p>4. Faça upload para a raiz do seu site (mesmo local do robots.txt)</p>
+                </div>
+
+                <div class="step">
+                    <h3>Atualize seu robots.txt</h3>
+                    <p>Adicione esta linha ao seu arquivo robots.txt:</p>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode('code5pt')">Copiar</button>
+                        <pre id="code5pt">License: https://seusite.com.br/license.xml</pre>
+                    </div>
+                    <div class="info-box">
+                        <strong>💡 Dica:</strong> Substitua "seusite.com.br" pelo seu domínio real
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h3>Teste sua implementação</h3>
+                    <p>Verifique se tudo está funcionando:</p>
+                    <ol>
+                        <li>Acesse: <code>https://seusite.com.br/license.xml</code></li>
+                        <li>Verifique se o XML aparece corretamente</li>
+                        <li>Acesse: <code>https://seusite.com.br/robots.txt</code></li>
+                        <li>Confirme que a linha License está presente</li>
+                    </ol>
+                    <div class="success-box">
+                        <strong>✅ Pronto!</strong> Seu site agora está protegido pelo RSL
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="installation" class="section container" data-lang="en">
+            <h2>Quick Installation</h2>
+            
+            <div class="warning-box">
+                <strong>⚠️ Important:</strong> Before starting, backup your robots.txt files and verify you have FTP access or control panel access to your site.
+            </div>
+
+            <div class="steps">
+                <div class="step">
+                    <h3>Choose your license model</h3>
+                    <p>Select below the type of protection you want for your content:</p>
+                    
+                    <div class="tabs">
+                        <button class="tab active" onclick="showTab('blocking-en')">Complete Block<span class="badge new">Recommended</span></button>
+                        <button class="tab" onclick="showTab('monetization-en')">Monetization</button>
+                        <button class="tab" onclick="showTab('attribution-en')">Attribution</button>
+                        <button class="tab" onclick="showTab('hybrid-en')">Hybrid</button>
+                    </div>
+
+                    <div id="blocking-en" class="tab-content active">
+                        <p>Completely blocks the use of your content for AI training:</p>
+                        <div class="code-block">
+                            <button class="copy-btn" onclick="copyCode('code1en')">Copy</button>
+                            <pre id="code1en">&lt;rsl xmlns="https://rslstandard.org/rsl"&gt;
+  &lt;content url="/"&gt;
+    &lt;license&gt;
+      &lt;prohibits type="usage"&gt;ai-train, ai-include&lt;/prohibits&gt;
+    &lt;/license&gt;
+  &lt;/content&gt;
+&lt;/rsl&gt;</pre>
+                        </div>
+                    </div>
+
+                    <div id="monetization-en" class="tab-content">
+                        <p>Allows use through payment via RSL Collective:</p>
+                        <div class="code-block">
+                            <button class="copy-btn" onclick="copyCode('code2en')">Copy</button>
+                            <pre id="code2en">&lt;rsl xmlns="https://rslstandard.org/rsl"&gt;
+  &lt;content url="/" server="https://rslcollective.org/api"&gt;
+    &lt;license&gt;
+      &lt;permits type="usage"&gt;ai-train&lt;/permits&gt;
+      &lt;payment type="royalty"&gt;
+        &lt;standard&gt;https://rslcollective.org/license&lt;/standard&gt;
+      &lt;/payment&gt;
+    &lt;/license&gt;
+  &lt;/content&gt;
+&lt;/rsl&gt;</pre>
+                        </div>
+                    </div>
+
+                    <div id="attribution-en" class="tab-content">
+                        <p>Allows free use with mandatory attribution:</p>
+                        <div class="code-block">
+                            <button class="copy-btn" onclick="copyCode('code3en')">Copy</button>
+                            <pre id="code3en">&lt;rsl xmlns="https://rslstandard.org/rsl"&gt;
+  &lt;content url="/"&gt;
+    &lt;license&gt;
+      &lt;permits type="usage"&gt;ai-train&lt;/permits&gt;
+      &lt;payment type="attribution"&gt;
+        &lt;standard&gt;https://creativecommons.org/licenses/by/4.0/&lt;/standard&gt;
+      &lt;/payment&gt;
+    &lt;/license&gt;
+  &lt;/content&gt;
+&lt;/rsl&gt;</pre>
+                        </div>
+                    </div>
+
+                    <div id="hybrid-en" class="tab-content">
+                        <p>Allows search but blocks AI training:</p>
+                        <div class="code-block">
+                            <button class="copy-btn" onclick="copyCode('code4en')">Copy</button>
+                            <pre id="code4en">&lt;rsl xmlns="https://rslstandard.org/rsl"&gt;
+  &lt;content url="/"&gt;
+    &lt;license&gt;
+      &lt;permits type="usage"&gt;search&lt;/permits&gt;
+      &lt;prohibits type="usage"&gt;ai-train, ai-include&lt;/prohibits&gt;
+      &lt;payment type="subscription"&gt;
+        &lt;custom&gt;https://yoursite.com/licensing&lt;/custom&gt;
+      &lt;/payment&gt;
+    &lt;/license&gt;
+  &lt;/content&gt;
+&lt;/rsl&gt;</pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h3>Create the license.xml file</h3>
+                    <p>1. Copy the chosen code above</p>
+                    <p>2. Create a new file called <code>license.xml</code></p>
+                    <p>3. Paste the code and save the file</p>
+                    <p>4. Upload to your site root (same location as robots.txt)</p>
+                </div>
+
+                <div class="step">
+                    <h3>Update your robots.txt</h3>
+                    <p>Add this line to your robots.txt file:</p>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode('code5en')">Copy</button>
+                        <pre id="code5en">License: https://yoursite.com/license.xml</pre>
+                    </div>
+                    <div class="info-box">
+                        <strong>💡 Tip:</strong> Replace "yoursite.com" with your actual domain
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h3>Test your implementation</h3>
+                    <p>Verify everything is working:</p>
+                    <ol>
+                        <li>Access: <code>https://yoursite.com/license.xml</code></li>
+                        <li>Check if the XML appears correctly</li>
+                        <li>Access: <code>https://yoursite.com/robots.txt</code></li>
+                        <li>Confirm the License line is present</li>
+                    </ol>
+                    <div class="success-box">
+                        <strong>✅ Done!</strong> Your site is now protected by RSL
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="licencas" class="section container" data-lang="pt">
+            <h2>Modelos de Licença por Tipo de Site</h2>
+
+            <h3>📰 Jornais e Portais de Notícias</h3>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode('code6pt')">Copiar</button>
+                <pre id="code6pt">&lt;rsl xmlns="https://rslstandard.org/rsl"&gt;
+  &lt;content url="/noticias/" server="https://rslcollective.org/api"&gt;
+    &lt;license&gt;
+      &lt;permits type="usage"&gt;search&lt;/permits&gt;
+      &lt;prohibits type="usage"&gt;ai-train&lt;/prohibits&gt;
+      &lt;payment type="subscription"&gt;
+        &lt;custom&gt;https://seuportal.com.br/licenciamento-ia&lt;/custom&gt;
+      &lt;/payment&gt;
+    &lt;/license&gt;
+  &lt;/content&gt;
+&lt;/rsl&gt;</pre>
+            </div>
+
+            <h3>📝 Blogs e Criadores Independentes</h3>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode('code7pt')">Copiar</button>
+                <pre id="code7pt">&lt;rsl xmlns="https://rslstandard.org/rsl"&gt;
+  &lt;content url="/blog/"&gt;
+    &lt;license&gt;
+      &lt;permits type="usage"&gt;all&lt;/permits&gt;
+      &lt;payment type="attribution"&gt;
+        &lt;standard&gt;https://creativecommons.org/licenses/by/4.0/&lt;/standard&gt;
+      &lt;/payment&gt;
+    &lt;/license&gt;
+  &lt;/content&gt;
+&lt;/rsl&gt;</pre>
+            </div>
+        </section>
+
+        <section id="licenses" class="section container" data-lang="en">
+            <h2>License Models by Site Type</h2>
+
+            <h3>📰 News Sites and Portals</h3>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode('code6en')">Copy</button>
+                <pre id="code6en">&lt;rsl xmlns="https://rslstandard.org/rsl"&gt;
+  &lt;content url="/news/" server="https://rslcollective.org/api"&gt;
+    &lt;license&gt;
+      &lt;permits type="usage"&gt;search&lt;/permits&gt;
+      &lt;prohibits type="usage"&gt;ai-train&lt;/prohibits&gt;
+      &lt;payment type="subscription"&gt;
+        &lt;custom&gt;https://yourportal.com/ai-licensing&lt;/custom&gt;
+      &lt;/payment&gt;
+    &lt;/license&gt;
+  &lt;/content&gt;
+&lt;/rsl&gt;</pre>
+            </div>
+
+            <h3>📝 Blogs and Independent Creators</h3>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode('code7en')">Copy</button>
+                <pre id="code7en">&lt;rsl xmlns="https://rslstandard.org/rsl"&gt;
+  &lt;content url="/blog/"&gt;
+    &lt;license&gt;
+      &lt;permits type="usage"&gt;all&lt;/permits&gt;
+      &lt;payment type="attribution"&gt;
+        &lt;standard&gt;https://creativecommons.org/licenses/by/4.0/&lt;/standard&gt;
+      &lt;/payment&gt;
+    &lt;/license&gt;
+  &lt;/content&gt;
+&lt;/rsl&gt;</pre>
+            </div>
+        </section>
+
+        <section id="faq" class="section container">
+            <h2>FAQ</h2>
+            
+            <div class="faq">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span data-lang="pt">O RSL garante que as IAs vão pagar pelo meu conteúdo?</span>
+                        <span data-lang="en">Does RSL guarantee that AIs will pay for my content?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-lang="pt">Não há garantia absoluta, mas o RSL está ganhando adoção rapidamente. Grandes empresas como Reddit, Yahoo! e Medium já implementaram. Parceiros como Fastly e Cloudflare estão criando mecanismos de enforcement. Quanto mais sites adotarem, maior será a pressão para que as empresas de IA respeitem o padrão.</p>
+                        <p data-lang="en">There's no absolute guarantee, but RSL is gaining rapid adoption. Major companies like Reddit, Yahoo!, and Medium have already implemented it. Partners like Fastly and Cloudflare are creating enforcement mechanisms. The more sites adopt it, the greater the pressure for AI companies to respect the standard.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span data-lang="pt">Isso vai afetar meu SEO no Google?</span>
+                        <span data-lang="en">Will this affect my Google SEO?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-lang="pt">Não! O RSL permite que você diferencie entre crawlers de busca (como o Googlebot) e crawlers de IA. Você pode continuar permitindo indexação para SEO enquanto bloqueia ou monetiza o uso para treinamento de IA. Use <code>permits type="search"</code> para manter o SEO.</p>
+                        <p data-lang="en">No! RSL allows you to differentiate between search crawlers (like Googlebot) and AI crawlers. You can continue allowing indexing for SEO while blocking or monetizing AI training usage. Use <code>permits type="search"</code> to maintain SEO.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span data-lang="pt">Quanto custa implementar o RSL?</span>
+                        <span data-lang="en">How much does it cost to implement RSL?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-lang="pt">A implementação do RSL é totalmente gratuita. Não há taxas para usar o padrão. O RSL Collective também não cobra taxa de associação. Você só precisa criar dois arquivos de texto (license.xml e atualizar robots.txt). Se optar por monetização, o RSL Collective pode cobrar uma pequena porcentagem dos royalties coletados.</p>
+                        <p data-lang="en">RSL implementation is completely free. There are no fees to use the standard. The RSL Collective also doesn't charge membership fees. You only need to create two text files (license.xml and update robots.txt). If you opt for monetization, the RSL Collective may charge a small percentage of collected royalties.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span data-lang="pt">Posso mudar minha licença depois?</span>
+                        <span data-lang="en">Can I change my license later?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-lang="pt">Sim! Você pode alterar seu arquivo license.xml a qualquer momento. As mudanças entram em vigor assim que os crawlers verificarem novamente seu site. Recomendamos começar com uma política mais restritiva e relaxar gradualmente conforme você entender melhor o impacto.</p>
+                        <p data-lang="en">Yes! You can change your license.xml file at any time. Changes take effect as soon as crawlers check your site again. We recommend starting with a more restrictive policy and gradually relaxing as you better understand the impact.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="recursos" class="section container" data-lang="pt">
+            <h2>Recursos e Links Úteis</h2>
+            
+            <h3>🔗 Links Oficiais</h3>
+            <ul>
+                <li><a href="https://rslstandard.org" target="_blank">Site Oficial do RSL</a></li>
+                <li><a href="https://rslstandard.org/guide/getting-started" target="_blank">Guia de Início Rápido</a></li>
+                <li><a href="https://rslcollective.org" target="_blank">RSL Collective</a></li>
+                <li><a href="https://github.com/rslstandard" target="_blank">GitHub do RSL</a></li>
+            </ul>
+
+            <h3>🇧🇷 Contexto Brasileiro</h3>
+            <ul>
+                <li><a href="https://www25.senado.leg.br/web/atividade/materias/-/materia/157233" target="_blank">PL 2338/2023 - Marco Legal da IA</a></li>
+                <li><a href="https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/transformacaodigital/inteligencia-artificial" target="_blank">Estratégia Brasileira de IA</a></li>
+            </ul>
+
+            <div class="warning-box">
+                <strong>⚠️ Aviso Legal:</strong> Este guia é informativo. Para questões legais específicas, consulte um advogado especializado em propriedade intelectual e direito digital.
+            </div>
+        </section>
+
+        <section id="resources" class="section container" data-lang="en">
+            <h2>Resources and Useful Links</h2>
+            
+            <h3>🔗 Official Links</h3>
+            <ul>
+                <li><a href="https://rslstandard.org" target="_blank">RSL Official Website</a></li>
+                <li><a href="https://rslstandard.org/guide/getting-started" target="_blank">Quick Start Guide</a></li>
+                <li><a href="https://rslcollective.org" target="_blank">RSL Collective</a></li>
+                <li><a href="https://github.com/rslstandard" target="_blank">RSL GitHub</a></li>
+            </ul>
+
+            <h3>🌍 International Context</h3>
+            <ul>
+                <li><a href="https://www.europarl.europa.eu/topics/en/article/20230601STO93804/eu-ai-act-first-regulation-on-artificial-intelligence" target="_blank">EU AI Act</a></li>
+                <li><a href="https://www.whitehouse.gov/ostp/ai-bill-of-rights/" target="_blank">US AI Bill of Rights</a></li>
+                <li><a href="https://www.wipo.int/ai-for-ip/en/" target="_blank">WIPO - AI and IP Policy</a></li>
+            </ul>
+
+            <div class="warning-box">
+                <strong>⚠️ Legal Notice:</strong> This guide is informational. For specific legal questions, consult a lawyer specializing in intellectual property and digital law.
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://rslstandard.org" target="_blank">RSL Official</a>
+                <a href="https://github.com/rslstandard" target="_blank">GitHub</a>
+                <a href="https://rslcollective.org" target="_blank">RSL Collective</a>
+                <a href="#" onclick="scrollToTop(); return false;">
+                    <span data-lang="pt">Voltar ao Topo</span>
+                    <span data-lang="en">Back to Top</span>
+                </a>
+            </div>
+            <p data-lang="pt">© 2025 Guia RSL - Guia não oficial criado para apoiar criadores de conteúdo</p>
+            <p data-lang="en">© 2025 RSL Guide - Unofficial guide created to support content creators</p>
+            <p><span data-lang="pt">Atualizado em: Setembro 2025</span><span data-lang="en">Last Updated: September 2025</span></p>
+        </div>
+    </footer>
+
+    <script>
+        function setLanguage(lang) {
+            document.body.className = 'lang-' + lang;
+            document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+            
+            // Update language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Load saved language preference
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            if (savedLang) {
+                document.body.className = 'lang-' + savedLang;
+                document.documentElement.lang = savedLang === 'pt' ? 'pt-BR' : 'en';
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.textContent.includes(savedLang.toUpperCase())) {
+                        btn.classList.add('active');
+                    }
+                });
+            }
+        });
+
+        function showTab(tabName) {
+            // Remove active class from all tabs and contents in the same section
+            const tabSection = document.getElementById(tabName).parentElement;
+            tabSection.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            tabSection.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            
+            // Add active class to clicked tab and corresponding content
+            event.target.classList.add('active');
+            document.getElementById(tabName).classList.add('active');
+        }
+
+        function toggleFAQ(element) {
+            element.parentElement.classList.toggle('active');
+        }
+
+        function copyCode(codeId) {
+            const codeElement = document.getElementById(codeId);
+            const textArea = document.createElement('textarea');
+            textArea.value = codeElement.textContent;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            
+            // Change button text temporarily
+            const button = event.target;
+            const originalText = button.textContent;
+            const currentLang = document.body.className.includes('lang-en') ? 'en' : 'pt';
+            button.textContent = currentLang === 'pt' ? 'Copiado!' : 'Copied!';
+            button.style.background = '#10b981';
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.background = '';
+            }, 2000);
+        }
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href') === '#') return;
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
