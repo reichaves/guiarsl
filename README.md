@@ -14,11 +14,11 @@ Você sabia que seu conteúdo pode estar sendo usado para treinar IAs sem sua au
 
 Com o avanço das ferramentas de IA generativa, criadores de conteúdo, jornalistas e empresas enfrentam um desafio crescente: como proteger seus direitos autorais na era da inteligência artificial?
 
-Faz algum tempo conheci o RSL (Really Simple Licensing), um padrão aberto e descentralizado baseado no RSS (Really Simple Syndication) que permite aos publicadores definir termos de licenciamento e compensação legíveis por máquinas para crawlers e agentes de IA
+Faz pouco tempo conheci o RSL (Really Simple Licensing), um padrão aberto e descentralizado baseado no RSS (Really Simple Syndication) que permite aos publicadores definir termos de licenciamento e compensação legíveis por máquinas para crawlers e agentes de IA
 
 Fiz este guia sobre isso - [https://reichaves.github.io/guiarsl/](https://reichaves.github.io/guiarsl/)
 
-E hoje também a repórter Fernanda Brigatti falou sobre isso na Folha - [https://www1.folha.uol.com.br/tec/2025/09/novo-padrao-para-sites-cria-cobranca-e-camada-extra-de-protecao-a-conteudo-usado-por-ias.shtml](https://www1.folha.uol.com.br/tec/2025/09/novo-padrao-para-sites-cria-cobranca-e-camada-extra-de-protecao-a-conteudo-usado-por-ias.shtml)
+E hoje (26 set 2025) também a repórter Fernanda Brigatti falou sobre isso na Folha - [https://www1.folha.uol.com.br/tec/2025/09/novo-padrao-para-sites-cria-cobranca-e-camada-extra-de-protecao-a-conteudo-usado-por-ias.shtml](https://www1.folha.uol.com.br/tec/2025/09/novo-padrao-para-sites-cria-cobranca-e-camada-extra-de-protecao-a-conteudo-usado-por-ias.shtml)
 
 O RSL Collective é a organização sem fins lucrativos que mantém e governa o padrão Really Simple Licensing (RSL), reunindo publishers, plataformas e desenvolvedores para definir regras abertas de licenciamento de conteúdo para uso por IAs
 
@@ -31,11 +31,11 @@ Did you know that your content may be used to train AIs without your authorizati
 
 With the rise of generative AI tools, content creators, journalists, and companies face a growing challenge: how to protect their copyrights in the age of artificial intelligence?
 
-Some time ago, I learned about RSL (Really Simple Licensing), an open and decentralized standard based on RSS (Really Simple Syndication) that allows publishers to define machine-readable licensing and compensation terms for AI crawlers and agents.
+Not long ago, I learned about RSL (Really Simple Licensing), an open and decentralized standard based on RSS (Really Simple Syndication) that allows publishers to define machine-readable licensing and compensation terms for AI crawlers and agents.
 
 I made this guide about it – [https://reichaves.github.io/guiarsl/](https://reichaves.github.io/guiarsl/)
 
-And today, reporter Fernanda Brigatti also wrote about it in Folha – [https://www1.folha.uol.com.br/tec/2025/09/novo-padrao-para-sites-cria-cobranca-e-camada-extra-de-protecao-a-conteudo-usado-por-ias.shtml](https://www1.folha.uol.com.br/tec/2025/09/novo-padrao-para-sites-cria-cobranca-e-camada-extra-de-protecao-a-conteudo-usado-por-ias.shtml)
+And today (September 26, 2025), reporter Fernanda Brigatti also wrote about it in Folha – [https://www1.folha.uol.com.br/tec/2025/09/novo-padrao-para-sites-cria-cobranca-e-camada-extra-de-protecao-a-conteudo-usado-por-ias.shtml](https://www1.folha.uol.com.br/tec/2025/09/novo-padrao-para-sites-cria-cobranca-e-camada-extra-de-protecao-a-conteudo-usado-por-ias.shtml)
 
 The RSL Collective is the nonprofit organization that maintains and governs the Really Simple Licensing (RSL) standard, bringing together publishers, platforms, and developers to define open rules for content licensing for AI use.
 
