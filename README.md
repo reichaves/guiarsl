@@ -26,6 +26,8 @@ Ou seja, é uma tentativa inicial de pagamento. O volume e o tipo de crawling po
 
 Hoje, na prática no Brasil, se um veículo ou publisher aderir ao RSL o que se ganha é sobretudo sinalização técnica e política. Não há um fluxo garantido de receita, não há relatos de Big Techs já pagando via RSL. Mas pode ser um caminho inicial de criar um esforço coletivo mundial de pressão e parceria com o RSL Collective. No relato de lançamento, o TechCrunch afirma que RSL cria uma “organização coletiva de licenciamento … que pode negociar termos e coletar royalties” para publishers [https://techcrunch.com/2025/09/10/rss-co-creator-launches-new-protocol-for-ai-data-licensing/](https://techcrunch.com/2025/09/10/rss-co-creator-launches-new-protocol-for-ai-data-licensing/)
 
+Veja mais sobre o RSL Collective e como se associar e tirar dúvidas - [https://rslcollective.org/publishers](https://rslcollective.org/publishers)
+
 
 Did you know that your content may be used to train AIs without your authorization or compensation?
 
@@ -42,6 +44,8 @@ The RSL Collective is the nonprofit organization that maintains and governs the 
 In other words, it is an initial attempt at establishing payment. The volume and type of AI crawling has grown rapidly, with declining referral traffic to news sites and an increase in “training” bots. Infrastructure players reacted: Cloudflare began blocking AI crawlers by default, launched “pay per crawl” and “AI crawl control” (including HTTP 402 “payment required” responses). These moves show that robots.txt alone is insufficient and that a “licensing pathway” was missing.
 
 Today, in practice in Brazil, if a news outlet or publisher adopts RSL, what they gain is mainly technical and political signaling. There is no guaranteed revenue stream, and there are no reports of Big Techs already paying via RSL. But it may be an initial path to creating a global collective effort of pressure and partnership with the RSL Collective. In its launch coverage, TechCrunch stated that RSL creates a “collective licensing organization … that can negotiate terms and collect royalties” for publishers [https://techcrunch.com/2025/09/10/rss-co-creator-launches-new-protocol-for-ai-data-licensing](https://techcrunch.com/2025/09/10/rss-co-creator-launches-new-protocol-for-ai-data-licensing)
+
+Learn more about the RSL Collective and how to join and ask questions - [https://rslcollective.org/publishers](https://rslcollective.org/publishers)
 
 ## 🌟 Demonstração / Demo
 
