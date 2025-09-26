@@ -8,7 +8,7 @@ Um guia multilíngue (PT/EN) para implementação do RSL (Really Simple Licensin
 
 A multilingual guide (PT/EN) for implementing RSL (Really Simple Licensing) - the open standard that allows content creators to protect their work from unauthorized AI usage.
 
-## 🌟 Explicação 
+## 🌟 Explicação / Explanation
 
 Você sabia que seu conteúdo pode estar sendo usado para treinar IAs sem sua autorização ou compensação?
 
@@ -25,6 +25,23 @@ O RSL Collective é a organização sem fins lucrativos que mantém e governa o 
 Ou seja, é uma tentativa inicial de pagamento. O volume e o tipo de crawling por IAs cresceram rapidamente, com queda de tráfego de referência para sites jornalísticos e aumento de bots de “training”. Players de infraestrutura reagiram: a Cloudflare passou a bloquear por padrão crawlers de IA, lançou “pay per crawl” e “AI crawl control” (inclui respostas HTTP 402 “payment required”). Esses movimentos mostram que só o robots.txt é insuficiente e que um “caminho de licenciamento” estava faltando
 
 Hoje, na prática no Brasil, se um veículo ou publisher aderir ao RSL o que se ganha é sobretudo sinalização técnica e política. Não há um fluxo garantido de receita, não há relatos de Big Techs já pagando via RSL. Mas pode ser um caminho inicial de criar um esforço coletivo mundial de pressão e parceria com o RSL Collective. No relato de lançamento, o TechCrunch afirma que RSL cria uma “organização coletiva de licenciamento … que pode negociar termos e coletar royalties” para publishers [https://techcrunch.com/2025/09/10/rss-co-creator-launches-new-protocol-for-ai-data-licensing/](https://techcrunch.com/2025/09/10/rss-co-creator-launches-new-protocol-for-ai-data-licensing/)
+
+
+Did you know that your content may be used to train AIs without your authorization or compensation?
+
+With the rise of generative AI tools, content creators, journalists, and companies face a growing challenge: how to protect their copyrights in the age of artificial intelligence?
+
+Some time ago, I learned about RSL (Really Simple Licensing), an open and decentralized standard based on RSS (Really Simple Syndication) that allows publishers to define machine-readable licensing and compensation terms for AI crawlers and agents.
+
+I made this guide about it – [https://reichaves.github.io/guiarsl/](https://reichaves.github.io/guiarsl/)
+
+And today, reporter Fernanda Brigatti also wrote about it in Folha – [https://www1.folha.uol.com.br/tec/2025/09/novo-padrao-para-sites-cria-cobranca-e-camada-extra-de-protecao-a-conteudo-usado-por-ias.shtml](https://www1.folha.uol.com.br/tec/2025/09/novo-padrao-para-sites-cria-cobranca-e-camada-extra-de-protecao-a-conteudo-usado-por-ias.shtml)
+
+The RSL Collective is the nonprofit organization that maintains and governs the Really Simple Licensing (RSL) standard, bringing together publishers, platforms, and developers to define open rules for content licensing for AI use.
+
+In other words, it is an initial attempt at establishing payment. The volume and type of AI crawling has grown rapidly, with declining referral traffic to news sites and an increase in “training” bots. Infrastructure players reacted: Cloudflare began blocking AI crawlers by default, launched “pay per crawl” and “AI crawl control” (including HTTP 402 “payment required” responses). These moves show that robots.txt alone is insufficient and that a “licensing pathway” was missing.
+
+Today, in practice in Brazil, if a news outlet or publisher adopts RSL, what they gain is mainly technical and political signaling. There is no guaranteed revenue stream, and there are no reports of Big Techs already paying via RSL. But it may be an initial path to creating a global collective effort of pressure and partnership with the RSL Collective. In its launch coverage, TechCrunch stated that RSL creates a “collective licensing organization … that can negotiate terms and collect royalties” for publishers [https://techcrunch.com/2025/09/10/rss-co-creator-launches-new-protocol-for-ai-data-licensing](https://techcrunch.com/2025/09/10/rss-co-creator-launches-new-protocol-for-ai-data-licensing)
 
 ## 🌟 Demonstração / Demo
 
